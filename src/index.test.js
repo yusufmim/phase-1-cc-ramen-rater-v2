@@ -208,7 +208,7 @@ describe('handleSubmit', () => {
         const ramenFormComment = document.querySelector("#new-ramen #new-comment");
         const submitButton = document.getElementById('submit-button');
 
-        main(ramenForm)
+        main()
 
         ramenFormName.value = newRamen.name;
         ramenFormRestaurant.value = newRamen.restaurant;
@@ -219,7 +219,7 @@ describe('handleSubmit', () => {
         fireEvent.click(submitButton);
 
         const ramenMenuDivAfter = document.querySelectorAll('#ramen-menu img');
-        const img = ramenMenuDivAfter[ramenMenuDivBefore.length];
+        const img = ramenMenuDivAfter[ramenMenuDivBefore.length - 1];
         img.addEventListener('click', (event) => {
             handleClick(newRamen, event);
         });
