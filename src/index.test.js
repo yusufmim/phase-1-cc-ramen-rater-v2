@@ -208,15 +208,24 @@ describe('handleSubmit', () => {
         const ramenFormComment = document.querySelector("#new-ramen #new-comment");
         const submitButton = document.getElementById('submit-button');
 
-        main(ramenForm)
-
         ramenFormName.value = newRamen.name;
         ramenFormRestaurant.value = newRamen.restaurant;
         ramenFormImage.value = newRamen.image;
         ramenFormRating.value = newRamen.rating;
         ramenFormComment.value = newRamen.comment;
 
-        fireEvent.click(submitButton);
+        fireEvent.submit(ramenForm, {
+            target: {
+                name: { value: newRamen.name },
+                restaurant: { value: newRamen.restaurant },
+                image: { value: newRamen.image },
+                rating: { value: newRamen.rating },
+                comment: { value: newRamen.comment },
+            },
+            preventDefault: vi.fn(),
+            reset: vi.fn(),
+
+        });
 
         const ramenMenuDivAfter = document.querySelectorAll('#ramen-menu img');
         const img = ramenMenuDivAfter[ramenMenuDivBefore.length];
