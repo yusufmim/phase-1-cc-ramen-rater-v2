@@ -78,10 +78,10 @@ As a user, I can:
 ```html
 <form id="edit-ramen">
   <h4>Update the Featured Ramen</h4>
-  <label for="rating">Rating: </label>
-  <input type="number" name="rating" id="new-rating" />
-  <label for="new-comment">Comment: </label>
-  <textarea name="new-comment" id="new-comment"></textarea>
+  <label for="edit-rating">Rating: </label>
+  <input type="number" name="edit-rating" id="edit-rating" />
+  <label for="edit-comment">Comment: </label>
+  <textarea name="edit-comment" id="edit-comment"></textarea>
   <input type="submit" value="Update" />
 </form>
 ```
